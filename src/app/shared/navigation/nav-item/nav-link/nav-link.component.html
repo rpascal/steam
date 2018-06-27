@@ -1,0 +1,9 @@
+<a [routerLink]="node.routerPath" routerLinkActive="active">
+  <li class="fe-nav-align-vertical">
+    <fa-icon *ngIf="node.faIcon" matPrefix aria-hidden="true" [icon]="node.faIcon" [fixedWidth]="true"></fa-icon>
+
+    <mat-icon *ngIf="!node.faIcon">{{node.matIcon}}</mat-icon>
+
+    <span class="link-title">{{node.title}}</span>
+  </li>
+</a>

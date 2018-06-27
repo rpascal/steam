@@ -1,0 +1,23 @@
+<div *ngIf="!node.children && !node.hidden">
+  <div *ngIf="level === 0">
+    <ul class="nav-links">
+      <fe-nav-link [node]="node"></fe-nav-link>
+    </ul>
+  </div>
+
+  <div *ngIf="level > 0">
+    <fe-nav-link [node]="node"></fe-nav-link>
+  </div>
+</div>
+
+<div *ngIf="node.children && !node.hidden">
+  <mat-expansion-panel class="nav-panel" [expanded]="true">
+    <mat-expansion-panel-header class="nav-panel-header">
+      <mat-panel-title class="nav-panel-title">{{node.title}}</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <ul class="nav-links">
+      <fe-nav-item *ngFor="let innerNode of node.children" [node]="innerNode" [level]="level + 1"></fe-nav-item>
+    </ul>
+  </mat-expansion-panel>
+</div>

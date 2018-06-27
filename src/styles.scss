@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+
+$fe-app-primary: mat-palette($mat-blue, 800, 100, 900);
+$fe-app-accent: mat-palette($mat-green, 800, 100, 900);
+$fe-app-warn: mat-palette($mat-red);
+
+$fe-app-theme: mat-light-theme($fe-app-primary, $fe-app-accent, $fe-app-warn);
+
+@include angular-material-theme($fe-app-theme);
+
+// styles.scss
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import 'app/shared/navigation/fe-navigation.scss';
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+
+.fill-remaining-space {
+
+    flex: 1 1 auto;
+  }
