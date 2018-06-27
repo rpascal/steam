@@ -3,12 +3,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { MatProgressSpinnerModule, MatSnackBarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SteamService } from './steam/steam.service';
+import { NavigationService } from './navigation/navigation.service';
 
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [],
   declarations: [],
