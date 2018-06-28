@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { SteamService } from '../../core/steam/steam.service';
 
 @Component({
@@ -7,18 +8,18 @@ import { SteamService } from '../../core/steam/steam.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  constructor(private steamService: SteamService) {}
 
-  constructor(private steamService: SteamService) { }
+  ownedGames: any;
 
-  ownedGames:any;
+  steamUserId: string;
 
-  ngOnInit() {
+  ngOnInit() {}
 
-    this.steamService.getOwnedGames().subscribe(data=>{
+  submit() {
+    this.steamService.getOwnedGames(this.steamUserId).subscribe(data => {
       this.ownedGames = data;
       console.log(data);
-    })
-
+    });
   }
-
 }

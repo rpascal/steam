@@ -5,6 +5,7 @@ import { BootstrapModule } from './bootstrap/bootstrap.module';
 import { FENavigationMenuModule } from './navigation';
 import { FontAwesomeLibraryModule } from './font-awesome-library.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BootstrapModule,
     FENavigationMenuModule,
     FontAwesomeLibraryModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [],
   exports: [
@@ -23,6 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BootstrapModule,
     FENavigationMenuModule,
     FontAwesomeLibraryModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

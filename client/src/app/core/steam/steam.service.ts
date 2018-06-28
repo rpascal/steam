@@ -15,8 +15,12 @@ export class SteamService {
   constructor(private httpClient: HttpClient) { }
 
 
-  public getOwnedGames(){
-    return this.httpClient.get(`${this.baseApi}steam/`, {headers: this.headers})
+  public getOwnedGames(steamUserId: string) {
+    return this.httpClient.get(`${this.baseApi}steam/`, {
+      headers: this.headers, params: {
+        steamUserId: steamUserId
+      }
+    })
   }
 
 

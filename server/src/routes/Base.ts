@@ -25,7 +25,7 @@ export class BaseRoute {
                 uri: 'https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/',
                 qs: {
                     key: AppConfig.steamApiKey,
-                    steamid: process.env.jijik23_steam_id,
+                    steamid: req.query.steamUserId,
                     include_appinfo: true,
                     include_played_free_games: true
                 }
